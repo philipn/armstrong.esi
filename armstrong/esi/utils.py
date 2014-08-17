@@ -122,6 +122,7 @@ def replace_esi_tags(request, response):
     fragment_cookies = []
     request_data = {
         'cookies': request.COOKIES,
+        'HTTP_HOST': request.META['HTTP_HOST'],
         'HTTP_REFERER': request.build_absolute_uri(),
         'HTTP_X_ESI_FRAGMENT': True,
     }
